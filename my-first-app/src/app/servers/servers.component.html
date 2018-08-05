@@ -1,0 +1,7 @@
+<!-- <input type="text" class="form-control" (input)="setServerName($event)">  <!-- only one way --> 
+<input type="text" class="form-control" [(ngModel)]="serverName"> <!-- two way -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click) = "onServerCreated()">Add Server</button>
+<br>
+{{ serverCreationStatus }}
+<app-server></app-server>
+<app-server></app-server>

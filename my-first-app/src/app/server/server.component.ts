@@ -7,6 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
 
+  serverId: number = 7;
+  toggle: boolean = false;
+  serverStatus: String;
+  getServerStatus() : String{
+     
+    return "offline";
+    /*
+    if(this.toggle){
+      this.toggle = !this.toggle;
+      this.serverStatus = "offline";
+      return this.serverStatus;
+    }else{
+      this.toggle = !this.toggle;
+      this.serverStatus = "online";
+      return this.serverStatus;
+    } 
+   
+    this would return a changedetection error so just returning offline.
+    */
+  }
+
   constructor() { }
 
   ngOnInit() {
