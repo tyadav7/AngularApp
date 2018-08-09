@@ -1,7 +1,21 @@
-<!-- <input type="text" class="form-control" (input)="setServerName($event)">  <!-- only one way --> 
-<input type="text" class="form-control" [(ngModel)]="serverName"> <!-- two way -->
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click) = "onServerCreated()">Add Server</button>
+<!-- <input type="text" class="form-control" (input)="setServerName($event)">  <!-- only one way -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- two way -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreated()">Add Server</button>
 <br>
-{{ serverCreationStatus }}
+
+
+<p *ngIf="flag">
+    Server created with name {{ serverCreationStatus }}
+</p>
+
+<!-- 
+ <ng-container *ngIf="flag; else elseTemplate">
+    Server created with name {{ serverCreationStatus }}
+ </ng-container>
+ <ng-template #elseTemplate>
+     No Servers are present
+ </ng-template> -->
+
 <app-server></app-server>
 <app-server></app-server>

@@ -12,7 +12,7 @@ export class ServerComponent implements OnInit {
   serverStatus: String;
   getServerStatus() : String{
      
-    return "offline";
+    return this.serverStatus;
     /*
     if(this.toggle){
       this.toggle = !this.toggle;
@@ -28,7 +28,15 @@ export class ServerComponent implements OnInit {
     */
   }
 
-  constructor() { }
+  constructor() { 
+
+    this.serverStatus = Math.random() > 0.5 ? 'offline' : 'online';
+
+  }
+
+  getColor(){
+   return this.serverStatus === 'offline' ? 'red' : 'green';
+  }
 
   ngOnInit() {
   }

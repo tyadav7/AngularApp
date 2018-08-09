@@ -1,0 +1,8 @@
+<button btn primary-btn (click)="onClick()">Display Details</button>
+<p *ngIf="flag">A quick brown fox jumped over the little lazy dog.</p>
+<div 
+      *ngFor="let item of array let i = index"
+      [ngStyle]="{backgroundColor: i >=5 ? 'blue' : 'transparent'}" 
+      [ngClass]="{'customClass': i >=5 }" >{{item}}
+</div>
+      
